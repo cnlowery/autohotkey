@@ -1,21 +1,30 @@
-;Basic Instructions
-;move/resize your active window with a simple keyboard shortcut
-;requirements: install autohotkey - http://www.autohotkey.com/
-;requirements: numlock = ON
-;Left Control + NumpadX to align on your left monitor
-;Left Alt + NumpadX to align on your right monitor
-;For NumpadX, X is assigned as such
-; 7 = upper left quarter
-; 9 = upper right quarter
-; 1 = lower left quarter
-; 3 = lower right quarter
-; 4 = left half
-; 6 = left half
-; 5 = full screen
-; 2 = center with current height and width
+/*
+About
 
+move/resize your active window with a simple keyboard shortcut
+
+Requirements:
+install autohotkey - http://www.autohotkey.com/
+numlock = ON
+Left Control + NumpadX to align on your left monitor
+Left Alt + NumpadX to align on your right monitor
+For NumpadX, X is assigned as such
+ 4 = left half
+ 6 = right half
+ 5 = full screen
+ 7 = upper left quarter
+ 9 = upper right quarter
+ 1 = lower left quarter
+ 3 = lower right quarter
+ 2 = center with current height and width
+
+Script author: Nick Lowery
+https://github.com/cnlowery/autohotkey/blob/master/DualMonitorWindowPlacement.ahk
+
+ResizeWin method by - http://www.howtogeek.com/howto/28663/create-a-hotkey-to-resize-windows-to-a-specific-size-with-autohotkey/
+*/
 ;****************************************************************
-;Get monitor dimensions
+;START get monitor dimensions
 
 SysGet, Mon1, MonitorWorkArea, 1
 Left1 = %Mon1Left%
@@ -29,8 +38,9 @@ Top2 = %Mon2Top%
 Right2 = %Mon2Right%
 Bottom2 = %Mon2Bottom%
 
+;END monitor dimension
 ;****************************************************************
-;Resize Window
+;START Resize Window
 
 ResizeWin(Width = 0,Height = 0)
 {
@@ -43,28 +53,26 @@ ResizeWin(Width = 0,Height = 0)
 
   WinMove,A,,%X%,%Y%,%Width%,%Height%
 }
-; ResizeWin method by - http://www.howtogeek.com/howto/28663/create-a-hotkey-to-resize-windows-to-a-specific-size-with-autohotkey/
 
+;END Resize Window
 ;****************************************************************
-;Primary Monitor Variables
+;START Monitor Variables
 
+;Primary Monitor Variables
 PrimaryResizeHalfHeight := Bottom1
 PrimaryResizeHalfWidth := Right1//2
-
 PrimaryResizeQuarterHeight := Bottom1//2
 PrimaryResizeQuarterWidth := Right1//2
-
 PrimaryMiddleHeight := Bottom1//2
 PrimaryMiddleWidth := Right1//2
 
 ;Secondary Monitor Variables
 SecondaryFullWidth := Right2-Right1
-
 SecondaryHalfWidth := (Right2-Right1)//2
 SecondaryHalfHeight := Bottom2//2
-
 SecondaryHalfPosition := (Right2-Right1)//2+Right1
 
+;END Monitor Variables
 ;****************************************************************
 ;START primary monitor window placement
 
