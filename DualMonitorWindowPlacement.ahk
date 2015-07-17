@@ -2,19 +2,13 @@
 About
 
 move/resize your active window with a simple keyboard shortcut
-<<<<<<< HEAD
 currently only works when all monitors report positive numbers to SysGet (i.e. primary monitor must be Mon1 with Mon2 sitting to the right of it)
-=======
->>>>>>> 072013611a0d653ed4c57fdf3b359f5510cd535b
 
 Requirements:
 install autohotkey - http://www.autohotkey.com/
 numlock = ON
-<<<<<<< HEAD
 
 Instructions:
-=======
->>>>>>> 072013611a0d653ed4c57fdf3b359f5510cd535b
 Left Control + NumpadX to align on your left monitor
 Left Alt + NumpadX to align on your right monitor
 For NumpadX, X is assigned as such
