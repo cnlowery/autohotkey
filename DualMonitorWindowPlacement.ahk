@@ -15,8 +15,8 @@
 ; 2 = center with current height and width
 
 ;****************************************************************
-
 ;Get monitor dimensions
+
 SysGet, Mon1, MonitorWorkArea, 1
 Left1 = %Mon1Left%
 Top1 = %Mon1Top%
@@ -30,6 +30,7 @@ Right2 = %Mon2Right%
 Bottom2 = %Mon2Bottom%
 
 ;****************************************************************
+;Resize Window
 
 ResizeWin(Width = 0,Height = 0)
 {
@@ -45,8 +46,8 @@ ResizeWin(Width = 0,Height = 0)
 ; ResizeWin method by - http://www.howtogeek.com/howto/28663/create-a-hotkey-to-resize-windows-to-a-specific-size-with-autohotkey/
 
 ;****************************************************************
-
 ;Primary Monitor Variables
+
 PrimaryResizeHalfHeight := Bottom1
 PrimaryResizeHalfWidth := Right1//2
 
@@ -65,8 +66,8 @@ SecondaryHalfHeight := Bottom2//2
 SecondaryHalfPosition := (Right2-Right1)//2+Right1
 
 ;****************************************************************
-
 ;START primary monitor window placement
+
 ;Center window
 LCtrl & Numpad2::
 WinGetPos,,, Width, Height, A
@@ -114,11 +115,11 @@ LCtrl & Numpad3::
 Winmove, A,, PrimaryMiddleWidth, PrimaryMiddleHeight
 ResizeWin(PrimaryResizeQuarterWidth,PrimaryResizeQuarterHeight)
 return
+
 ;END primary monitor window placement
-
 ;****************************************************************
-
 ;START secondary monitor window placement
+
 ;Center window
 LAlt & Numpad2::
 WinGetPos,,, Width, Height, A
@@ -166,15 +167,6 @@ LAlt & Numpad3::
 Winmove, A,, SecondaryHalfPosition, SecondaryHalfHeight
 ResizeWin(SecondaryHalfWidth,SecondaryHalfHeight)
 return
-;END secondary monitor window placementSysGet, Mon1, MonitorWorkArea, 1
-Left1 = %Mon1Left%
-Top1 = %Mon1Top%
-Right1 = %Mon1Right%
-Bottom1 = %Mon1Bottom%
 
-SysGet, Mon2, MonitorWorkArea, 2
-Left2 = %Mon2Left%
-Top2 = %Mon2Top%
-Right2 = %Mon2Right%
-Bottom2 = %Mon2Bottom%
 ;END secondary monitor window placement
+;****************************************************************
