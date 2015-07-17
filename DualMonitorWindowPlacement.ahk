@@ -41,7 +41,7 @@ ResizeWin(Width = 0,Height = 0)
 
   WinMove,A,,%X%,%Y%,%Width%,%Height%
 }
-; code provided by - http://www.howtogeek.com/howto/28663/create-a-hotkey-to-resize-windows-to-a-specific-size-with-autohotkey/
+; ResizeWin method by - http://www.howtogeek.com/howto/28663/create-a-hotkey-to-resize-windows-to-a-specific-size-with-autohotkey/
 
 ;****************************************************************
 
